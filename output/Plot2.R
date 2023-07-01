@@ -9,10 +9,8 @@ datetime <- paste(as.Date(data$Date), data$Time)
 
 data$Datetime <- as.POSIXct(datetime)
 
-png("output/plot1.png", width = 480, height = 480)
+png("output/plot2.png", width = 480, height = 480)
 
-hist(data$Global_active_power, main="Global Active Power", 
-     xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
-
+plot(data$Global_active_power~data$Datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 
 dev.off()
